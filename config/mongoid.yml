@@ -1,14 +1,14 @@
 development:
   sessions:
     default:
-      database: hrguru_dev
+      database: people_dev
       hosts:
         - localhost:27017
 
 test:
   sessions:
     default:
-      database: hrguru_test
+      database: people_test
       hosts:
         - localhost:27017
 

@@ -29,12 +29,13 @@ Hrguru::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => AppConfig.sendgrid.login,
-    :password       => AppConfig.sendgrid.password,
-    :domain         => AppConfig.sendgrid.domain,
+    :address              => ENV["SMTP_ADDRESS"],
+    :port                 => 587,
+    :domain               => ENV["SMTP_DOMAIN"],
+    :user_name            => ENV["SMTP_USER"],
+    :password             => ENV["SMTP_PASSWORD"],
+    :authentication       => "plain",
+    :openssl_verify_mode  => 'none',
     :enable_starttls_auto => true
   }
 end

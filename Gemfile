@@ -1,13 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.0.0"
 
 gem 'rails', '4.0.3'
-gem 'rollbar'
 gem 'google-analytics-rails'
-gem 'newrelic_rpm'
 
-gem 'konf'
-gem "heroku-mongo-backup", github: 'alexkravets/heroku-mongo-backup', branch: 'mongoid4'
 gem 'fog'
 
 gem 'mongoid', github: 'mongoid/mongoid', ref: '054825f'
@@ -50,6 +45,14 @@ gem 'messengerjs-rails'
 
 gem 'whenever', require: false
 gem 'versionist'
+
+gem 'unicorn'
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-rvm'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-bundler'
+gem 'dotenv'
+gem 'dotenv-deployment'
 
 group :staging, :production do
   gem 'rails_12factor'

@@ -1,33 +1,27 @@
 People
 ======
 
-##MongoDB OSX installation:
+Define env settings: (define a .env file)
 
-```shell
-  brew update
-  brew install mongodb
-```
+* EMAIL_INTERNAL= your google apps domain
+* EMAIL_FROM= email sender address
+* EMAIL_PM= Project manager email
+* EMAIL_SOCIAL= ?
+* COMPANY_NAME= Your company name
+* DOMAIN= The project domain
+* TLD_LENGTH= the project domain tld length
+* SMTP_USER= The smtp user
+* SMTP_PASSWORD= The smtp user password
+* SMTP_DOMAIN= The smtp domain
+* SMTP_ADDRESS= The smtp server address
+* GOOGLE_CLIENT_ID= The google API client id
+* GOOGLE_CLIENT_SECRET= The google API client secret
+* GOOGLE_DOMAIN= The google API domain
+* GITHUB_CLIENT_ID= The github client id
+* GITHUB_CLIENT_SECRET= The github client secret
+* SECRET_TOKEN= The secret token of your app
+* API_TOKEN= The api token of your app
+* MONGOHQ_URL= The mongo url
+* DEVISE_FROM_EMAIL= The devise from email
+* SECRET_KEY= The session secret key
 
-## Dev auth setup
-
-### Google Auth
-
-  * goto [https://cloud.google.com/console](https://cloud.google.com/console)
-  * create new project
-  * choose credentials tab (on the left)
-  * create both new client id
-  * choose web application
-  * set `Authorized JavaScript origins` to `http://localhost:3000`
-  * set `Authorized redirect URI` to `http://localhost:3000/users/auth/google_oauth2/callback`
-  * goto next tab "Consent screen"
-  * fill in "Email address" and "Product name" and save
-
-### Github Auth
-
-  * do the same for github account (callback address is `http://localhost:3000/users/auth/github/callback`)
-
-### Local settings
-
-All the required app settings are located in `config/config.yml` file.
-
-Get started: https://devcenter.heroku.com/articles/getting-started-with-rails4

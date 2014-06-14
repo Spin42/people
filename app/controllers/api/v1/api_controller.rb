@@ -6,7 +6,7 @@ class Api::V1::ApiController < ActionController::Base
   private
 
   def authenticate_api!
-    render(nothing: true, status: 403) unless params[:token] == AppConfig.api_token
+    render(nothing: true, status: 403) unless params[:token] == ENV["API_TOKEN"]
   end
 
 end

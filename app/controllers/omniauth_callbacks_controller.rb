@@ -19,7 +19,7 @@ class OmniauthCallbacksController <  ApplicationController
   private
 
   def check_internal_user
-    if request.env['omniauth.auth']['extra']['raw_info']['hd'] != AppConfig.emails.internal
+    if request.env['omniauth.auth']['extra']['raw_info']['hd'] != ENV["EMAIL_INTERNAL"]
       redirect_to root_path, error: 'No internal user'
     end
   end

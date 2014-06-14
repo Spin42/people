@@ -11,7 +11,7 @@ describe Api::V1::ApiController do
 
     context "with valid token" do
       it "should not call render" do
-        get :index, token: AppConfig.api_token
+        get :index, token: ENV["API_TOKEN"]
         expect(response.body).to eq("nothing")
       end
     end

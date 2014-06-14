@@ -13,3 +13,4 @@ coverage
 tags
 
 .ruby-gemset
+.ruby-version

@@ -1,7 +1,7 @@
 Devise.setup do |config|
-  config.secret_key = 'a4137e53d2076f61852675dd378015a0a50e7c210c1e851fb80a49f3304171bcc9665d89e83f1d305e8ade80e2ffa2f50c6bbf8d096f71f216c54dc6b5308ab9'
+  config.secret_key = ENV["SECRET_KEY"] || "CHANGE_ME"
 
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = ENV["DEVISE_FROM_EMAIL"]
 
   require 'devise/orm/mongoid'
 
@@ -18,15 +18,15 @@ Devise.setup do |config|
 
   config.omniauth(
     :google_oauth2,
-    AppConfig.google_client_id,
-    AppConfig.google_secret,
-    { access_type: "offline", approval_prompt: "", hd: AppConfig.google_domain }
+    ENV["GOOGLE_CLIENT_ID"],
+    ENV["GOOGLE_CLIENT_SECRET"],
+    { access_type: "offline", approval_prompt: "", hd: ENV["GOOGLE_DOMAIN"] }
   )
 
   config.omniauth(
     :github,
-    AppConfig.github_client_id,
-    AppConfig.github_secret,
+    ENV["GITHUB_CLIENT_ID"],
+    ENV["GITHUB_CLIENT_SECRET"],
     { scope: '' }
   )
 end

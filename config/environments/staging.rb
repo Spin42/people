@@ -12,15 +12,4 @@ Hrguru::Application.configure do
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
-  GA.tracker = 'UA-35395053-13'
-
-  ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => AppConfig.sendgrid.login,
-    :password       => AppConfig.sendgrid.password,
-    :domain         => AppConfig.sendgrid.domain,
-    :enable_starttls_auto => true
-  }
 end

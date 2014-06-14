@@ -8,7 +8,6 @@ require "moped"
 
 Moped::BSON = BSON
 
-require File.expand_path('../preinitializer', __FILE__)
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 if defined?(Bundler)
@@ -29,6 +28,6 @@ module Hrguru
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.hamlcoffee.name_filter = lambda { |n| n.sub /^backbone\/templates\//, '' }
-    config.action_dispatch.tld_length = AppConfig.tld_length
+    config.action_dispatch.tld_length = ENV["TLD_LENGTH"]
   end
 end
